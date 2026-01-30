@@ -1,4 +1,4 @@
-# BeProx - Development Plan
+# Development Roadmap
 
 **Goal**: Build a desktop application using Tauri, enabling developers to expose local servers via `.local` domains and public URLs, with traffic inspection capabilities.
 
@@ -20,7 +20,7 @@
     - Dynamically generate certificates for user-defined domains.
     - Install/Trust Root CA in the system keychain (security command).
 
-## Phase 3: Traffic Inspector 🔍
+## Phase 3: Traffic Inspector UI 🔍
 - [ ] **Request/Response Capture**
     - Implement middleware in the Rust proxy to capture HTTP metadata (Headers, Body, Status, Timing).
 - [ ] **Real-time UI Updates**

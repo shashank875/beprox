@@ -1,67 +1,38 @@
 # BeProx
 
-BeProx is a powerful desktop application for developers, designed to simplify local development by exposing local servers via custom `.local` domains and public URLs. It also aims to provide advanced traffic inspection capabilities.
+BeProx is a powerful desktop application for developers that acts as a **Local Domain Proxy**, mapping custom domains (e.g., `myapp.local`) to your local running services (e.g., `localhost:5173`).
 
-## 🚀 Features
+## 📚 Documentation
 
-### Current Features (MVP)
-- **Local Domain Proxy**: Map custom domains (e.g., `myapp.local`) to your local running services (e.g., `localhost:5173`).
-- **Automatic Host Resolution**: Automatically manages `/etc/hosts` entries for your custom domains.
-- **Port 80 Binding**: Runs on port 80 to allow accessing domains without specifying ports in the browser.
-- **System Tray Integration**: Quick access to open the app or quit.
+Full documentation is available in the `docs` directory or at [https://jekibus.github.io/beprox/](https://jekibus.github.io/beprox/) (once deployed).
 
-### Roadmap
-- **Traffic Inspector**: Capture and inspect HTTP/HTTPS request/response metadata (Headers, Body, Timing).
-- **HTTPS / TLS Support**: Dynamic certificate generation for local domains.
-- **Public Tunneling**: Expose local ports to the internet via public URLs.
-- **Replay Mechanism**: Replay captured requests for debugging.
+- [Getting Started](docs/guide/getting-started.md)
+- [Roadmap](docs/roadmap.md)
 
-## 🛠️ Tech Stack
+## �️ Development
 
-- **Frontend**: [Svelte 5](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/), [TailwindCSS](https://tailwindcss.com/), [Vite](https://vitejs.dev/)
-- **Backend**: [Tauri v2](https://tauri.app/) (Rust)
-- **Runtime**: [Bun](https://bun.sh/)
-
-## 📋 Prerequisites
-
-Before running the project, ensure you have the following installed:
+### Prerequisites
 
 - **Rust**: [Install Rust](https://www.rust-lang.org/tools/install)
 - **Bun**: [Install Bun](https://bun.sh/)
 - **Tauri Prerequisites**: Follow the [Tauri System Configuration](https://tauri.app/v1/guides/getting-started/prerequisites) guide for your OS.
 
-## 💻 Getting Started
+### Quick Start
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/beprox.git
-cd beprox
-```
+1. **Install dependencies**
+   ```bash
+   bun install
+   ```
 
-### 2. Install dependencies
-```bash
-bun install
-```
+2. **Run App**
+   ```bash
+   sudo bun tauri dev
+   ```
 
-### 3. Run in Development Mode
-Since BeProx needs to bind to port 80 and modify `/etc/hosts`, it requires administrative privileges during development.
-
-```bash
-sudo bun tauri dev
-```
-*Note: On macOS/Linux, `sudo` is required. On Windows, run your terminal as Administrator.*
-
-### 4. Build for Production
-To build the application for your operating system:
-
-```bash
-bun tauri build
-```
-
-The output binary/bundle will be located in:
-- **macOS**: `src-tauri/target/release/bundle/macos/BeProx.app`
-- **Windows**: `src-tauri/target/release/bundle/msi/` or `nsis/`
-- **Linux**: `src-tauri/target/release/bundle/deb/` or `appimage/`
+3. **Run Docs**
+   ```bash
+   bun docs:dev
+   ```
 
 ## 📝 License
 
