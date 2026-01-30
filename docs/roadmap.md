@@ -1,3 +1,6 @@
+---
+description: Future development plans and upcoming features for BeProx
+---
 # Development Roadmap
 
 **Goal**: Build a desktop application using Tauri, enabling developers to expose local servers via `.local` domains and public URLs, with traffic inspection capabilities.

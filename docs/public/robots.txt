@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jekibus.github.io/beprox/sitemap.xml

@@ -1,3 +1,6 @@
+---
+description: Learn how to install and run BeProx on your machine
+---
 # Getting Started
 
 ## Prerequisites
