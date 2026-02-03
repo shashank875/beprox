@@ -63,8 +63,8 @@ jobs:
             **Note for macOS users:**
             Since this app is not code-signed, you may see a "damaged" error. To fix this, run:
             ```bash
-             xattr -cr /Applications/BeProx.app
-             ```
-           releaseDraft: true
+            xattr -cr /Applications/BeProx.app
+            ```
+          releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
