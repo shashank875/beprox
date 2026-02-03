@@ -6,6 +6,7 @@ mod commands;
 
 use store::StoreState;
 use tauri::Manager;
+use tauri::image::Image;
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{TrayIconBuilder},
@@ -37,7 +38,7 @@ pub fn run() {
             let _tray = TrayIconBuilder::new()
                 .menu(&menu)
                 .show_menu_on_left_click(true)
-                .icon(app.default_window_icon().unwrap().clone())
+                .icon(Image::from_bytes(include_bytes!("../icons/icon.png")).unwrap())
                 .on_menu_event(|app, event| match event.id.as_ref() {
                     "quit" => {
                         app.exit(0);

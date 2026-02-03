@@ -3,6 +3,9 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/beprox/',
+  head: [
+    ['link', { rel: 'icon', href: '/beprox/favicon.png' }]
+  ],
   title: "BeProx",
   description: "Local Domain Proxy & Traffic Inspector",
   sitemap: {
@@ -31,6 +34,7 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },

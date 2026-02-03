@@ -111,8 +111,7 @@
   <header class="mb-12 flex flex-col md:flex-row justify-between items-center gap-6">
     <div class="flex items-center gap-4">
       <div class="bg-indigo-500/20 p-3 rounded-2xl border border-indigo-500/30">
-        <!-- Logo Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.58-1.25.5-2.25.5-2.5 0-.5-1.5-2-1.5-2 .5-1.25.5-2.25.5-2.5-2 0-3.5 1.5-3.5 1.5a5.5 5.5 0 0 0-3.5 0c0 0-1.5-1.5-3.5-1.5-.25 0-.25 1.25.25 2.5 0 0-1.5 1.5-1.5 2 0 .25-.08 1.25.5 2.5C6.5 16.5 9.5 18.5 12.5 18.5c-1 1.5-1 3.5-1 3.5V22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        <img src="/icon.png" width="32" height="32" alt="BeProx Logo" />
       </div>
       <div>
         <h1 class="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white to-slate-400">BeProx</h1>
