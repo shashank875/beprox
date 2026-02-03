@@ -12,11 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: 'macos-13' # Intel (runs on x86_64 hardware)
+          - platform: 'macos-15-intel' # Intel (runs on x86_64 hardware)
             args: '--target x86_64-apple-darwin'
           - platform: 'macos-latest' # Apple Silicon (runs on arm64 hardware)
             args: '--target aarch64-apple-darwin'
-          - platform: 'ubuntu-22.04'
+          - platform: 'ubuntu-24.04'
             args: ''
           - platform: 'windows-latest'
             args: ''
@@ -39,13 +39,13 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           # Explicitly set targets based on the matrix platform
-          targets: ${{ matrix.platform == 'macos-13' && 'x86_64-apple-darwin' || matrix.platform == 'macos-latest' && 'aarch64-apple-darwin' || '' }}
+          targets: ${{ matrix.platform == 'macos-15-intel' && 'x86_64-apple-darwin' || matrix.platform == 'macos-latest' && 'aarch64-apple-darwin' || '' }}
 
       - name: install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-22.04'
+        if: matrix.platform == 'ubuntu-24.04'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl wget file libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
+          sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl wget file libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev libxdo-dev
 
       - name: install frontend dependencies
         run: bun install
@@ -57,7 +57,14 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: 'BeProx v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
+          releaseBody: |
+            See the assets to download this version and install.
+            
+            **Note for macOS users:**
+            Since this app is not code-signed, you may see a "damaged" error. To fix this, run:
+            ```bash
+             xattr -cr /Applications/BeProx.app
+             ```
+           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
